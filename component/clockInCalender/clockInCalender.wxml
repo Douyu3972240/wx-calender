@@ -1,0 +1,29 @@
+<view>
+  <view>
+    <view class="week display-flex flex-top-center">
+      <view class="weekItem font-weight-500" wx:for="{{weeks}}" wx:for-item="i" wx:key="i" wx:for-index="k">{{i.simple}}
+      </view>
+    </view>
+    <view class="calender">
+      <swiper current="{{currentSwiperItem}}" vertical="{{false}}" bindchange="swiperChange" class="calenderSwiper">
+        <swiper-item class="eveyday relative overflow-hidden" wx:for="{{dateList}}" wx:for-item="a" wx:key="a"
+          wx:for-index="b">
+          <view class="absolute monthNumberInCalender font-weight-500">{{a.monthNumber.month*1}}</view>
+          <view bindtap="{{a.monthNumber.month*1 == c.month*1 ? 'selectDay' : 'noSelectDayHint'}}" data-year="{{c.year}}" data-month="{{c.month}}" data-day="{{c.day}}" class="eveydayItem relative float-left" wx:for="{{a.pageMonth}}"
+            wx:for-item="c" wx:key="c" wx:for-index="d"
+            style="{{a.monthNumber.month*1 == c.month*1 ? (c.year == year && c.month*1 == month*1 && c.day*1 == day*1) ? 'color:#fff;transform:scale(1.1,1.1);' : '' : 'color:#ddd;'}}">{{c.day*1}}
+            <view wx:if="{{c.year == userSelectDate.year && c.month*1 == userSelectDate.month*1 && c.day*1 == userSelectDate.day*1}}" class="userSelectDay absolute border-radius-full border-box"></view>
+            <view wx:for="{{selectDate}}" wx:for-item="selectDateItem" wx:key="selectDateItem" class="status absolute display-flex flex-top-center" wx:if="{{selectDateItem.year*1 == c.year*1 && selectDateItem.month*1 == c.month*1 && selectDateItem.day*1 == c.day*1 && (a.monthNumber.month*1 == c.month*1)}}">
+              <view wx:if="{{selectDateItem.status*1 == 0}}" class="statusDot border-radius-full" style="background-color:#D90B0B;"></view>
+              <view wx:if="{{selectDateItem.status*1 == 1}}" class="statusDot border-radius-full" style="background-color:#EA5B24;"></view>
+              <view wx:if="{{selectDateItem.status*1 == 2}}" class="statusDot border-radius-full" style="background-color:#04BE02;"></view>
+            </view>
+            <view wx:if="{{c.year == year && c.month*1 == month*1 && c.day*1 == day*1 && (a.monthNumber.month*1 == c.month*1)}}"
+              class="today absolute overflow-hidden border-radius-full display-flex flex-left-center flex-top-center">
+              <text class="todayText font-weight-500">今</text></view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

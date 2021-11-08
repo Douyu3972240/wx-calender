@@ -1,0 +1,92 @@
+@import "/app.wxss";
+
+.opacity {
+  opacity: 0;
+}
+
+.week,
+.eveyday {
+  text-align: center;
+  color: #999;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  padding: 10rpx 0;
+}
+
+.eveydayItem {
+  padding: 30rpx 0;
+}
+
+.calenderSwiper {
+  height: 600rpx;
+  /* height: 500rpx; */
+}
+
+.eveyday {
+  /* background-color: red; */
+  height: 100%;
+  padding: 0;
+}
+
+.weekItem,
+.eveydayItem {
+  flex: 14.2857% 0 0;
+  width: 14.2857%;
+}
+
+.eveydayItem {
+  color: #333;
+  padding: 30rpx 0;
+}
+
+
+.monthNumberInCalender {
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(6.8);
+  font-size: 40rpx;
+  color: #bbb;
+  opacity: .2;
+}
+
+.today {
+  /* background-color: #EA5B24; */
+  /* background-color:#23eb9e; */
+  background-color:#ebbf23;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70rpx;
+  height: 70rpx;
+  z-index: -1;
+  color: #333;
+}
+
+.todayText {
+  color: #fff;
+  font-size: 50rpx;
+  opacity: .01;
+}
+
+.userSelectDay {
+  border:1px solid #EA5B24;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70rpx;
+  height: 70rpx;
+  z-index: -2;
+}
+
+.statusDot{
+  width:10rpx;
+  height:10rpx;
+}
+
+.status{
+  z-index:1;
+  left:50%;
+  bottom:20rpx;
+  transform:translateX(-50%);
+}
