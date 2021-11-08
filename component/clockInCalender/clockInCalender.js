@@ -15,7 +15,7 @@ Component({
       type: Boolean,
       value: true
     },
-    "week-start": { 
+    weekStart: { 
       type: Number,
       value: 7 //设置默认一个星期的开始是周几，1是周一，7是周天
     }
@@ -23,7 +23,7 @@ Component({
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      switch (this.data["week-start"]) {
+      switch (this.data.weekStart) {
         case 1:
           var weeks = [{
             simple: "一",
