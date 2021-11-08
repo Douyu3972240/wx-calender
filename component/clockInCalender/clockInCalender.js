@@ -1,5 +1,5 @@
 // component/clockInCalender/clockInCalender.js
-let DATE = require("../../utils/date.js");
+let DATE = require("./date.js");
 Component({
   /**
    * 组件的属性列表
